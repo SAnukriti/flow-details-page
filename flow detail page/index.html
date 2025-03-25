@@ -162,9 +162,9 @@
                                         </div>
                                     </div>
                                     <div class="section">
-                                        <div class="section-title" id="uniqueField">Unique Field</div>
+                                        <div class="section-title">Unique Field</div>
                                         <div class="flex-wrap">
-                                            <p></p>
+                                            <p class="field-type p-0 m-0" id="uniqueField"></p>
                                         </div>
                                     </div>
                                     <div class="section">
@@ -207,7 +207,7 @@
             if (value){
                 console.log("Value: ", value)
                 for (let i = 0; i < value.length; i++){
-                    document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].sourceField.label} ${value[i].operator.label} ${value[i].valueToBeCompared}`);
+                    document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].label} ${value[i].value} ${value[i].required}`);
                 }
             } else {
                 console.log(`Data missing for ${selector}`);
@@ -221,7 +221,8 @@
                 insertMarkup('#nextExecution', data.endDate);
                 insertMarkup('#createAt', data.created_time_field);
                 insertMarkup('#modifiedAt', data.updated_time_field);
-                insertFilter('#filters', data.filters)
+                insertFilter('#filters', data.filters);
+                insertUniqueField('#uniqueField', data.unique_fields);
             })
             .catch(error => console.log("Fetch Error:", error));
     </script>
