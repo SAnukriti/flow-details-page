@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flow Details Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="overflow-x-hidden">
+    <main class="d-flex flex-column">
+        <header class="header d-flex justify-content-between align-items-center px-4 py-2">
+            <div class="d-flex align-items-center">
+                <img class="logo" src="aonflow logo complete.svg">
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span>
+                    <span class="welcome-text">Welcome</span>
+                    <span class="user">Anukriti</span>
+                </span>
+                <button class="btn btn-light rounded-circle">
+                    <i class="bi bi-moon"></i>
+                </button>
+                <button class="btn btn-light rounded-circle"><i class="bi bi-bell"></i></button>
+                <button class="btn btn-light rounded-circle">AS</button>
+            </div>
+        </header>
+        <section class="flow-details m-2 p-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <button class="border-0 bg-transparent back-button" style='font-size:24px'><i
+                            class="bi bi-arrow-left border-0"></i></button>
+                    <div class="flow-name ms-3">
+                        <h5 class="mb-0 title">Ready Only</h5>
+                        <p class="mb-0 subtitle">Heal</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <p class="type m-0">Ondemand</p>
+                    <button class="play-button border-0 bg-transparent ms-2"><i class="bi bi-play"></i></button>
+                    <button class="toggle-button border-0 bg-transparent"><i class="bi bi-toggle-on"></i></button>
+                    <button class="edit-button border-0 bg-transparent"><i class="bi bi-pencil"></i></button>
+                    <button class="delete-button border-0 bg-transparent"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+        </section>
+        <section class="p-2">
+            <div class="row g-3">
+                <div class="col-md-8 mb-3 mb-sm-0">
+                    <div class="card border-white">
+                        <div class="height-adjustment card-body p-0">
+                            <h5 class="field-mapping-title">Field Mapping</h5>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex flex-column align-items-center mx-3">
+                                        <div class="d-flex justify-content-between w-100">
+                                            <span class="text-white">create</span>
+                                            <div>
+                                                <img class="business-central-img" src="salesforce.svg">
+                                            </div>
+                                            <span class="create-text">create</span>
+                                        </div>
+                                        <p class="mb-1">SurfNshine</p>
+                                        <p class="text-muted small">Last Sync: 11 Oct 2024 05:07 PM</p>
+                                    </div>
+                                    <div class="entity">Opportunity</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="d-flex flex-column align-items-center mx-3">
+                                        <div class="d-flex justify-content-between w-100">
+                                            <span class="text-white">create</span>
+
+                                            <div>
+                                                <img class="business-central-img" src="business-central.svg">
+                                            </div>
+                                            <span class="create-text">create</span>
+                                        </div>
+                                        <p class="mb-1">SurfNshine</p>
+                                        <p class="text-muted small">Last Sync: 18 Oct 2024 02:40 PM</p>
+
+                                    </div>
+                                    <div class="entity">SalesOrder</div>
+
+                                </div>
+                            </div>
+                            <div class="mapping">
+                                <div class="hr-line"></div>
+                                <div style="padding: 0 10px;">Others</div>
+                                <div class="hr-line"></div>
+                            </div>
+                            <div class="row mt-2 mb-2">
+                                <div class="col text-end pe-3">Shipping_Address_City__c</div>
+                                <div class="col-auto">></div>
+                                <div class="col ps-3">Ship_to_Address</div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col text-end pe-3">Name</div>
+                                <div class="col-auto">></div>
+                                <div class="col ps-3">Ship_to_Name</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="height-adjustment col-md-4">
+                    <div class="card border-light">
+                        <div class="card-body">
+                            <nav>
+                                <div class="nav nav-underline border-bottom" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="flow-activity" data-bs-toggle="tab"
+                                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                        aria-selected="true">Flow Activity</button>
+                                    <button class="nav-link" id="flow-details" data-bs-toggle="tab"
+                                        data-bs-target="#nav-profile" type="button" role="tab"
+                                        aria-controls="nav-profile" aria-selected="false">Flow Details</button>
+
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                    aria-labelledby="flow-activity" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="flow-details" tabindex="0">
+                                    <div class="section mt-3">
+                                        <div class="section-title">Flow</div>
+                                        <div class="flex flex-column">
+                                            <p class="input-field p-0 m-0">Type</p>
+                                            <p class="field-type m-0" id="flowType"></p>
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section-title">Flow Executions</div>
+                                        <div class="d-flex flex-row gap-3">
+                                            <div class="d-flex flex-column gap-1 flex-fill">
+                                                <p class="input-field p-0 m-0">First Execution Begin</p>
+                                                <p class="field-type m-0" id="firstExecution"></p>
+                                            </div>
+                                            <div class="vr"></div>
+                                            <div class="d-flex flex-column gap-1 flex-grow-1">
+                                                <p class="input-field p-0 m-0">Next Execution Begin</p>
+                                                <p class="field-type m-0" id="nextExecution"></p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section-title">Created & Modified Date & Time</div>
+                                        <div class="d-flex flex-row gap-3">
+                                            <div class="d-flex flex-column gap-1 flex-fill">
+                                                <p class="input-field p-0 m-0">Create at</p>
+                                                <p class="field-type m-0" id="createAt"></p>
+                                            </div>
+                                            <div class="vr"></div>
+
+                                            <div class="d-flex flex-column gap-1 flex-grow-1">
+                                                <p class="input-field p-0 m-0">Modified at</p>
+                                                <p class="field-type m-0" id="modifiedAt"></p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section-title" id="uniqueField">Unique Field</div>
+                                        <div class="flex-wrap">
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="section-title">Filters</div>
+                                        <div class="flex flex-column">
+                                            <p class="input-field p-0 m-0"></p>
+                                            <p class="field-type m-0" id="filters"></p>
+                                        </div>
+
+                                    </div>
+                                    <div class="section">
+                                        <div class="section-title">Response to Source</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <script>
+        function insertMarkup(selector, value) {
+            if (value) {
+                document.querySelector(selector).insertAdjacentHTML('beforeend', `${value}`);
+            } else {
+                console.log(`Data missing for ${selector}`);
+            }
+        }
+        function insertFilter(selector, value){
+            if (value){
+                console.log("Value: ", value)
+                for (let i = 0; i < value.length; i++){
+                    document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].sourceField.label} <span class="label">${value[i].operator.label}</span> ${value[i].valueToBeCompared}`);
+                }
+            } else {
+                console.log(`Data missing for ${selector}`);
+            }
+        }
+        function insertUniqueField(selector, value){
+            if (value){
+                console.log("Value: ", value)
+                for (let i = 0; i < value.length; i++){
+                    document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].sourceField.label} ${value[i].operator.label} ${value[i].valueToBeCompared}`);
+                }
+            } else {
+                console.log(`Data missing for ${selector}`);
+            }
+        }
+        fetch('http://localhost:4000/api/v1/flow/get-flowdetails/01J7X1CXCV2QZV440TRDF57EN5')
+            .then(res => res.json())
+            .then(data => {
+                insertMarkup('#flowType', data.type);
+                insertMarkup('#firstExecution', data.startDate);
+                insertMarkup('#nextExecution', data.endDate);
+                insertMarkup('#createAt', data.created_time_field);
+                insertMarkup('#modifiedAt', data.updated_time_field);
+                insertFilter('#filters', data.filters)
+            })
+            .catch(error => console.log("Fetch Error:", error));
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</body>
+
+</html>
