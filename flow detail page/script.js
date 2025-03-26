@@ -19,7 +19,7 @@ function insertUniqueField(selector, value){
     if (value){
         console.log("Value: ", value)
         for (let i = 0; i < value.length; i++){
-            document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].label} ${value[i].value} ${value[i].required}`);
+            document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].label} `);
         }
     } else {
         console.log(`Data missing for ${selector}`);
@@ -29,7 +29,7 @@ function insertResponseToSource(selector, value){
     if (value){
         console.log("Value: ", value)
         for (let i = 0; i < value.length; i++){
-            document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].value} <span class="mapping"> > </span> ${value[i].from} `);
+            document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].to.value} ${value[i].from} `);
         }
     } else {
         console.log(`Data missing for ${selector}`);
@@ -47,6 +47,5 @@ fetch('http://localhost:4000/api/v1/flow/get-flowdetails/01J7X1CXCV2QZV440TRDF57
         insertUniqueField('#uniqueField', data.unique_fields);
         insertResponseToSource('#responseToSource', data.response_field_mapping);
         insertResponseToSource('#responseToDestination', data.response_field_mapping);
-        
     })
     .catch(error => console.log("Fetch Error:", error));

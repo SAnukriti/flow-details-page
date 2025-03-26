@@ -212,3 +212,9 @@ p{
 .mapping{
     color: blue;
 }
+.nav-link {
+    color: black !important;
+}
+.nav-link.active {
+    color: #007bff !important;
+}
