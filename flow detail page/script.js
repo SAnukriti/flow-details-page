@@ -25,11 +25,12 @@ function insertUniqueField(selector, value){
         console.log(`Data missing for ${selector}`);
     }
 }
-function insertResponseToSource(selector, value){
+function insertResponseToSource(selector, selector2, value){
     if (value){
         console.log("Value: ", value)
         for (let i = 0; i < value.length; i++){
-            document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].to.value} ${value[i].from} `);
+            document.querySelector(selector).insertAdjacentHTML('beforeend', `${value[i].to.value}`);
+            document.querySelector(selector2).insertAdjacentHTML('beforeend', `${value[i].from} `);
         }
     } else {
         console.log(`Data missing for ${selector}`);
@@ -45,7 +46,7 @@ fetch('http://localhost:4000/api/v1/flow/get-flowdetails/01J7X1CXCV2QZV440TRDF57
         insertMarkup('#modifiedAt', data.updated_time_field);
         insertFilter('#filters', data.filters);
         insertUniqueField('#uniqueField', data.unique_fields);
-        insertResponseToSource('#responseToSource', data.response_field_mapping);
-        insertResponseToSource('#responseToDestination', data.response_field_mapping);
+        insertResponseToSource('#responseToSource', '#responseToDestination', data.response_field_mapping);
+        // insertResponseToSource(z, data.response_field_mapping);
     })
     .catch(error => console.log("Fetch Error:", error));
